@@ -1,0 +1,41 @@
+Here's another example of Garbage Collection (GC) code without comments:
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class GarbageCollectionExample {
+    public static void main(String[] args) {
+        List<StringBuilder> list = new ArrayList<>();
+
+        // Create and store StringBuilder objects
+        for (int i = 0; i < 10000; i++) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Object ").append(i);
+            list.add(sb);
+        }
+
+        // Remove references to StringBuilder objects
+        list.clear();
+        list = null;
+
+        // Trigger garbage collection
+        System.gc();
+
+        // Wait for a moment
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+In this example:
+
+- We create a list to hold `StringBuilder` objects.
+- We populate the list with `StringBuilder` objects containing some text.
+- After that, we clear the list and set it to `null`, removing all references to the `StringBuilder` objects.
+- We then invoke `System.gc()` to suggest that the garbage collector should run.
+- Finally, we wait for a moment to allow the garbage collector to perform its work.
