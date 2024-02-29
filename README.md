@@ -27,9 +27,3 @@ class Garbage {
 }
 ```
 
-In this simple example:
-
-- The `GarbageCollectionExample` class creates a large number of `Garbage` objects and makes them garbage.
-- In the main method, `System.gc()` is called to prompt the garbage collector to run.
-- The garbage collector eventually calls the `finalize()` method of each object to perform some cleanup before the object is garbage collected.
-- The program waits for some time to allow the garbage collector to complete its cleanup work.
